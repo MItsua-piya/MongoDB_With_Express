@@ -19,7 +19,8 @@
         <div class="chat">
             <p>From:<i><%=chat.from%></i></p>
              <div class="msg">
-               <p><%=chat.msg%> <form  method="GET" action="/chats/<%=chat.id%>/edit"><button>Edit</button></form></p></div>
+               <p><%=chat.msg%> <form  method="GET" action="/chats/<%=chat._id%>/edit"><button>Edit</button></form></p>
+            <form  method="POST" action="/chats/<%=chat._id%>?_method=DELETE"><button>Delete</button></form></p></div>
                 <p>To:<i><%=chat.to%></i></p>
                 <hr/>
                 <p><i>Received by</i> <%=chat.created_at.toString().split(" ") [4]%></p>
