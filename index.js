@@ -3,6 +3,7 @@ const app=express();
 const mongoose =require("mongoose");
 const path =require("path");
 const Chat =require("./models/chat.js");
+app.use(express.static(path.join(__dirname,"public")));
 //These two lines configure Express to use EJS (Embedded JavaScript) as the template engine and tell Express where your template files are located.
 
 app.set("views",path.join(__dirname,"views"));
@@ -19,6 +20,12 @@ async function main(){
     await mongoose.connect("mongodb://127.0.0.1:27017/whatsapp");//whatsapp is db name
 }
 
+//index route
+app.get("/chats",async (req,res)=>{
+    let chats= await Chat.find();
+    console.log(chats);
+    res.render("index.ejs",{chats});
+})
 app.get("/",(req,res)=>{
     res.send("root is working");
 });
