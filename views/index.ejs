@@ -21,6 +21,8 @@
              <div class="msg"> <p><%=chat.msg%></p></div>
                 <p>To:<i><%=chat.to%></i></p>
                 <hr/>
+                <p><i>Received by</i> <%=chat.created_at.toString().split(" ") [4]%></p>
+                <p><i>Received by</i> <%=chat.created_at.toString().split(" ").slice(0,4).join(" ")%></p>
         </div>
         <br><br>
 
