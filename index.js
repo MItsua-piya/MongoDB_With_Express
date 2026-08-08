@@ -57,6 +57,9 @@ app.get("/chats/:id/edit", async (req, res) => {
 app.get("/", (req, res) => {
   res.send("root is working");
 });
+
+
+
 //update route
 app.put("/chats/:id",async (req,res)=>{
     let {id}=req.params;
